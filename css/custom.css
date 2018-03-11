@@ -1,0 +1,1381 @@
+/*
+* Use this document to extend and add to the
+ Skeleton framewrok. 
+*/
+
+
+body {
+  overflow-x:hidden;
+}
+
+/* TYPOGRAPHY
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+h1{
+  color:black;
+  text-align: center;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 400;
+  letter-spacing: 4px !important;
+}
+
+h2{
+  color:black;
+  text-align: center;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 1.8em !important;
+  font-weight: 400;
+}
+
+h3{
+  color:black;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 400;
+
+}
+
+h5{
+  color:black;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+h6{
+  color:black;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+p{
+  font-family: 'Source sans pro', sans-serif !important;
+  font-size: 1.5em !important;
+}
+
+.title{
+  border-top: 10px solid #000; 
+  padding-top:20px;
+  background-color: white;
+
+}
+
+
+.cent{
+  padding-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.divider{
+  vertical-align: bottom;
+  max-height: 200px;
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  top: 50px; 
+}
+
+
+
+
+/* NAV STYLES
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+/* -------------------------------- 
+
+N A V I G A T I O N
+
+-------------------------------- */
+.pad{
+  padding-top: 50px;
+  
+}
+
+.pad-bot{
+  padding-bottom: 50px;
+}
+
+
+.cd-header {
+  position               : absolute;
+  top                    : 0;
+  left                   : 0;
+  background             : rgba(170,0,65, 0.96);
+  height                 : 50px;
+  width                  : 100%;
+  z-index                : 3;
+  box-shadow             : 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+  .cd-header.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position          : fixed;
+    top               : -80px;
+    background-color  : rgba(68, 0, 26, 0.96); /*collloooorr*/
+    color             : white;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition   : -moz-transform 0.3s;
+    transition        : transform 0.3s;
+  }
+  .cd-header.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform   : translate3d(0, 100%, 0);
+    -ms-transform    : translate3d(0, 100%, 0);
+    -o-transform     : translate3d(0, 100%, 0);
+    transform        : translate3d(0, 100%, 0);
+  }
+  .cd-header.menu-is-open {
+    /* add a background color to the header when the navigation is open */
+    background-color: rgba(68, 0, 26, 0.96);
+  }
+
+
+.cd-logo {
+  display          : block;
+  position         : absolute;
+  top              : 50%;
+  bottom           : auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform   : translateY(-50%);
+  -ms-transform    : translateY(-50%);
+  -o-transform     : translateY(-50%);
+  transform        : translateY(-50%);
+  left: .875em;
+}
+.cd-logo img {
+  margin-top: .7em;
+  display   : block;
+  max-height: 80px;
+}
+
+
+.cd-secondary-nav {
+  position         : absolute;
+  top              : 55%;
+  bottom           : auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform   : translateY(-50%);
+  -ms-transform    : translateY(-50%);
+  -o-transform     : translateY(-50%);
+  transform        : translateY(-50%);
+  right            : 10em;
+  /* hidden on small devices */
+  display: none;
+}
+.cd-secondary-nav li {
+  display: inline-block;
+  margin-left: 2.2em;
+}
+.cd-secondary-nav a {
+  display: inline-block;
+   text-shadow: 1px 1px white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+.cd-primary-nav-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: #44001A;
+}
+.cd-primary-nav-trigger .cd-menu-text {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* hide the text on small devices */
+  display: none;
+}
+.cd-primary-nav-trigger .cd-menu-icon {
+  /* this span is the central line of the menu icon */
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: black;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  /* these are the upper and lower lines in the menu icon */
+}
+.cd-primary-nav-trigger .cd-menu-icon::before, .cd-primary-nav-trigger .cd-menu-icon:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  right: 0;
+  -webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+  -moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+  transition: transform .3s, top .3s, background-color 0s;
+}
+.cd-primary-nav-trigger .cd-menu-icon::before {
+  top: -5px;
+}
+.cd-primary-nav-trigger .cd-menu-icon::after {
+  top: 5px;
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked {
+  background-color: rgba(255, 255, 255, 0);
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::before, .cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+  background-color: #FF0000;
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+  top: 0;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+  .cd-primary-nav-trigger .cd-menu-text {
+    display: inline-block;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon {
+    left: auto;
+    right: 1em;
+    -webkit-transform: translateX(0) translateY(-50%);
+    -moz-transform: translateX(0) translateY(-50%);
+    -ms-transform: translateX(0) translateY(-50%);
+    -o-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%);
+  }
+
+
+.cd-primary-nav {
+  /* by default it's hidden - on top of the viewport */
+  list-style:none; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(170,0,65, 0.96);
+  z-index: 2;
+  text-align: center;
+  padding: 50px 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: auto;
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.cd-primary-nav li {
+
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: .2em 0;
+  text-transform: capitalize;
+}
+.cd-primary-nav a {
+  list-style:none; 
+  display: inline-block;
+  padding: .4em 1em;
+  border-radius: 0.25em;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.no-touch .cd-primary-nav a:hover {
+  background-color: #e36767;
+}
+.cd-primary-nav .cd-label {
+  color: #44001A;
+  list-style:none; 
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 1rem;
+  margin: 2.4em 0 .8em;
+}
+.cd-primary-nav .cd-social {
+  display: inline-block;
+  margin: 0 .4em;
+}
+.cd-primary-nav .cd-social a {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-image: url("../images/cd-socials.svg");
+  background-repeat: no-repeat;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.cd-primary-nav .cd-facebook a {
+  background-position: 0 0;
+}
+.cd-primary-nav .cd-instagram a {
+  background-position: -44px 0;
+}
+
+
+.cd-primary-nav .cd-twitter a {
+  background-position: -132px 0;
+}
+
+.cd-primary-nav.is-visible {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+
+
+.cd-intro {
+  position: relative;
+  height: 100%;
+  background: url("../images/cd-background-img.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.cd-main-content {
+  position: relative;
+  z-index: 1;
+}
+.cd-main-content p {
+  line-height: 1.6;
+  margin: 2em 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .cd-header {
+    height    : 80px;
+    background: transparent;
+    box-shadow: none;
+  }
+    .cd-logo {
+    left: 2.6em;
+  }
+
+  .cd-primary-nav-trigger {
+    width: 100px;
+    padding-left: 1em;
+    background-color: transparent;
+    height: 30px;
+    line-height: 30px;
+    right: 2.2em;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .cd-secondary-nav {
+    display: block;
+  }
+
+  .cd-primary-nav {
+    padding: 80px 0;
+  }
+
+  .cd-main-content p {
+    font-size: 1.25rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 1170px) {
+  .cd-header {
+    -webkit-transition         : background-color 0.3s;
+    -moz-transition            : background-color 0.3s;
+    transition                 : background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform          : translate3d(0, 0, 0);
+    -moz-transform             : translate3d(0, 0, 0);
+    -ms-transform              : translate3d(0, 0, 0);
+    -o-transform               : translate3d(0, 0, 0);
+    transform                  : translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility        : hidden;
+  }
+
+  .cd-intro {
+    height: 700px;
+  }
+
+  .cd-main-content p {
+    font-size: 1.25rem;
+  }
+
+  .cd-primary-nav li {
+    font-size: 30px;
+    font-size: 2rem;
+  }
+  .cd-primary-nav .cd-label {
+
+    font-size: 2rem;
+  }
+
+
+}
+
+
+
+
+
+
+
+/* FOOTER
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -300px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 300px; 
+}
+
+footer {
+  text-align: center;
+  position: relative;
+    overflow: hidden;
+}
+
+footer li{
+  color:white;
+  list-style-type: none;
+  text-decoration: none;
+display: inline;
+}
+
+
+.email{
+  font-size: 1.3em;
+}
+/* unvisited link */
+.email a:link h5 {
+    color: #FFFFFF;}
+/* visited link */
+.email a:visited h5 {
+    color: #DFC2C0;}
+/* mouse over link */
+.email a:hover h5{
+    color: #AA0041;}
+/* selected link */
+.email a:active h5{
+    color: #34AADC;}
+
+/* C O N T A C T  link */
+/* unvisited link */
+footer a:link h5 {
+    color: #FFFFFF;}
+/* visited link */
+footer a:visited h5 {
+    color: #DFC2C0;}
+/* mouse over link */
+footer a:hover h5{
+    color: #AA0041;}
+/* selected link */
+footer a:active h5{
+    color: #34AADC;}
+
+
+/* M E N U   link */
+/* unvisited link */
+footer a:link h4 {
+    color: #FFFFFF;}
+/* visited link */
+footer a:visited h4 {
+    color: #DFC2C0;}
+/* mouse over link */
+footer a:hover h4{
+    color: #AA0041;}
+/* selected link */
+footer a:active h4{
+    color: #34AADC;}
+
+
+
+
+.footer-wrapper .links{
+  line-height: 1.5;
+}
+
+footer .socialmedia{
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  text-align: center;
+}
+
+.smleft{
+  padding-right: 19px;
+  
+}
+
+footer h3{
+  padding-top: 20px;
+  color: #DFC2C0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 2.7em;
+}
+
+footer h4{
+  font-size: 2em;
+  color: #FFFFFF;
+  font-family: 'Josefin Sans', sans-serif
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* HOME FEATURE
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.padbot{
+  padding-bottom: 10em;
+}
+.feature-wrapper{
+  padding-top: 10em;
+}
+
+.outlineside{
+  border-left: 10px solid #000; 
+  border-right: 10px solid #000; 
+}
+
+.outlinebot{
+  border-bottom: 10px solid #000; 
+}
+
+
+
+
+
+
+
+/* Body and container styles for better grid visibility 
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+body, html{
+  height: 100%;
+  color: white;
+  background-color: #333;
+  width: 100%;
+    
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+  padding-bottom: 1em;
+}
+
+
+
+
+
+
+
+/* button */
+
+
+.bttn{
+
+  color: white;
+  padding-top: 10px;
+  margin-top: -5px;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.bttnhover:hover {
+  background-color: #DFC2C0;
+  color: #AA0041 ;
+   z-index: 99;
+}
+
+.bttnhover a:hover h5{
+  color: #AA0041 ;
+   z-index: 99;
+}
+
+
+
+
+
+/* F O R M 
+
+form header {
+  margin: 0 0 20px 0; 
+}
+form header div {
+  font-size: 90%;
+  color: #999;
+}
+form header h2 {
+  margin: 0 0 5px 0;
+}
+form > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+}
+form > div > fieldset > div > div {
+  margin: 0 0 5px 0;
+}
+form > div > label,
+legend {
+  float: left;
+  padding-right: 10px;
+}
+form > div > div,
+form > div > fieldset > div {
+  width: 75%;
+  float: right;
+}
+form > div > fieldset label {
+  font-size: 90%;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* R E A L L Y   A W E S O M E   F L O W E R S */
+
+
+.top-contain-left {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 370px;
+  left: -30px;
+}
+/*index- page flowers*/
+.top-image-left {
+  background: url('../images/fl_af_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+/*fun- page flowers*/
+.top-image-left2 {
+  background: url('../images/fl_3_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+
+.top-contain-right {
+  padding:25px;
+  width:35%;
+  height:35%;
+  position:absolute;
+  top:400px;
+  right: -30px;  
+  top: 370px;
+}
+
+/*index- page flowers*/
+.top-image-right {
+  background:url('../images/fl_af_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+/*fun- page flowers*/
+.top-image-right2 {
+  background:url('../images/fl_top_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+/* FLOWERS TOP OF PAGE- FUN*/
+  .top-contain-topleft {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+/*fun- page flowers*/
+.top-image-topleft {
+  background: url('../images/fl_top_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+.top-contain-topright {
+  padding:25px;
+  width:35%;
+  height:35%;
+  position:absolute;
+  top: -10px;;
+  right: -30px;  
+}
+
+/*fun- page flowers*/
+.top-image-topright {
+  background:url('../images/fl_top_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+
+.top-contain-left2 {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 200px !important;
+  left: -30px;
+}
+.top-image-left2 {
+  background: url('../images/fl_3_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+.top-contain-right2 {
+  padding :25px;
+  width   :35%;
+  height  :35%;
+  position:absolute;
+ top: 200px !important;
+  right   : -60px;  
+}
+
+/*fun- page flowers*/
+.top-image-right2 {
+  background:url('../images/fl_2_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+   width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HISTORY STYLES
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* IN PAGE    I M A G E S 
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.year img{ 
+  display: block;
+  height: auto;
+  max-width:100%;
+  width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* background color styles 
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.white{background-color: #FFFFFF;}
+.pale{ background-color: #666666;}
+.pink{ background-color: #DFC2C0;}
+.red2{ background-color: #AA0041 ;}
+.green{ background-color: #A4E786;}
+.blue{ background-color: #34AADC;}
+.yellow{ background-color: #FFDB4C;}
+.grey{ background-color: #333333;}
+.grey2{ background-color: #E5E5E5;}
+.orange{ background-color:#FF9500;}
+
+
+
+/* google plugins etc
+–––––––––––––––––––––––––––––––––––––––––––––––––*/
+.google-maps {
+        position: relative;
+        padding-bottom: 75%; /* This is the aspect ratio*/
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 70% !important;
+    }
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Default style smartphone
+- Devices larger then 400px (single column)
+- Devices larger then 550px (grid becomes active)
+- More device sizes (tablet and up)
+- Typography notes
+*/
+
+
+/* Defaul styles for mobile smartphones
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+
+/* For devices larger than 400px (single column)
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+@media (max-width: 400px) {
+  /* add styles here*/ 
+
+  .top-image-left{
+    display: none;
+  }
+  .top-image-right{
+    display: none;
+  }
+.top-image-left2{
+    display: none;
+  }
+
+  .top-image-right2{
+    display: none;
+  }
+
+  .top-contain-topleft{
+    display: none;
+  }
+
+  .top-image-topright {
+      display: none;
+  }
+
+/*fun- page flowers*/
+.top-image-right2 {
+display: none; 
+}
+
+.top-image-left2 {
+display: none; 
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -750px; 
+  }
+footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 750px; 
+}
+
+.svgdiv {
+    width: 100%;
+    display: block;
+
+  margin-bottom:80px;
+
+}
+
+}
+
+
+/* For devices larger than 550px (also point when grid becomes active)
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+@media (max-width: 550px){
+  h1 {
+    display: block;
+    font-size: 3em;
+  }
+
+footer h3{
+
+  letter-spacing: 3px;
+  font-size: 2em;
+}
+
+footer h4{
+  font-size: 1.5em;
+ 
+}
+
+.email h5{
+  font-size: 1em;
+  
+}
+
+
+.aside{
+  float: left; width: 100%;
+  float: initial;
+}
+
+}
+
+
+
+/* More device sizes tablet and up
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+  .top-contain-left {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 420px;
+  left: -30px;
+}
+/*index- page flowers*/
+.top-image-left {
+  background: url('../images/fl_af_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+/*fun- page flowers*/
+.top-image-left2 {
+  background: url('../images/fl_3_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+
+.top-contain-right {
+  padding :25px;
+  width   :35%;
+  height  :35%;
+  position:absolute;
+  top     :450px;
+  right   : -30px;  
+}
+
+/*index- page flowers*/
+.top-image-right {
+  background:url('../images/fl_af_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:130%;
+  z-index:0;
+  height:130%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+/*fun- page flowers*/
+.top-image-right2 {
+  background:url('../images/fl_top_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+/* FLOWERS TOP OF PAGE- FUN*/
+  .top-contain-topleft {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+/*fun- page flowers*/
+.top-image-topleft {
+  background: url('../images/fl_top_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+.top-contain-topright {
+  padding:25px;
+  width:35%;
+  height:35%;
+  position:absolute;
+  top: -10px;;
+  right: -30px;  
+}
+
+/*fun- page flowers*/
+.top-image-topright {
+  background:url('../images/fl_top_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+.top-contain-right2 {
+  padding :25px;
+  width   :35%;
+  height  :35%;
+  position:absolute;
+ top: 200px !important;
+  right   : -60px;  
+}
+
+/*fun- page flowers*/
+.top-image-right2 {
+  background:url('../images/fl_2_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+   width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  .page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -300px; 
+  }
+  footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 300px; 
+}
+
+.top-contain-left {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 300px !important;
+  left: -30px;
+}
+
+
+
+/*index- page flowers*/
+.top-image-left {
+  background: url('../images/fl_af_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+/*fun- page flowers*/
+
+.top-contain-left2 {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 200px !important;
+  left: -30px;
+}
+.top-image-left2 {
+  background: url('../images/fl_3_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+
+.top-contain-right {
+  padding :25px;
+  width   :35%;
+  height  :35%;
+  position:absolute;
+ top: 350px !important;
+  right   : -30px;  
+}
+
+/*index- page flowers*/
+.top-image-right {
+  background:url('../images/fl_af_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:130%;
+  z-index:0;
+  height:130%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+.top-contain-right2 {
+  padding :25px;
+  width   :35%;
+  height  :35%;
+  position:absolute;
+ top: 200px !important;
+  right   : -60px;  
+}
+
+/*fun- page flowers*/
+.top-image-right2 {
+  background:url('../images/fl_2_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+/* FLOWERS TOP OF PAGE- FUN*/
+  .top-contain-topleft {
+  padding: 25px;
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+/*fun- page flowers*/
+.top-image-topleft {
+  background: url('../images/fl_top_l.png');
+  position: absolute;
+  background-size: contain;
+  width: 150%;
+  z-index: 0;
+  height: 150%;
+  background-repeat: no-repeat;
+  left: -30px;
+}
+
+.top-contain-topright {
+  padding:25px;
+  width:35%;
+  height:35%;
+  position:absolute;
+  top: -10px;;
+  right: -30px;  
+}
+
+/*fun- page flowers*/
+.top-image-topright {
+  background:url('../images/fl_top_r.png') right top;
+  position:absolute ;
+  background-size: contain;
+  width:150%;
+  z-index:0;
+  height:150%;
+  background-repeat: no-repeat;  
+  right:-30px;  
+}
+
+
+
+
+
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  .page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -300px; 
+  }
+  footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 300px; 
+
+}
+
+}
+
+/* Typography notes
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+

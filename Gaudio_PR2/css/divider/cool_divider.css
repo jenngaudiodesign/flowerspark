@@ -1,0 +1,89 @@
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+.container svg {
+	display: block;
+}
+
+
+
+
+
+
+.color {
+	background: #E5E5E5;
+}
+
+
+/* Common style for pseudo-elements */
+section::before,
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+section {
+	position: relative;
+	padding: 10em 10%;
+	background: #E5E5E5;
+	color: #fff;
+	text-align: center;
+}
+
+.svgdiv {
+    width: 100%;
+    display: block;
+	margin-bottom:-100px;
+
+}
+
+.svgfoot{
+    width: 100%;
+    display: inline-block;
+ position: relative;
+    margin-top: -200px;
+
+
+}
+
+html|* > svg {
+    transform-origin: 50% 50% 0px;
+}
+
+
+
+/* Stamp */
+.stamp-pink path {
+	fill:  #DFC2C0;
+	stroke: #DFC2C0; /* avoid gap in FF */
+
+}
+
+.stamp-grey path {
+	fill:   #E5E5E5;
+	stroke:  #E5E5E5; /* avoid gap in FF */
+
+	
+}
+
+
+
+/* Clouds */
+#clouds-grey path {
+	fill:   #E5E5E5;
+	stroke:  #333333; /* avoid gap in FF */
+	border-top:     none;
+}
+
+#clouds-pink path {
+	fill:   #DFC2C0;
+	stroke:  #333333; /* avoid gap in FF */
+	border-top:     none;
+}
